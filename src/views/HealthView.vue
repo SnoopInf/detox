@@ -5,17 +5,17 @@
 </template>
 
 <script>
-import Map from '../components/EcoMap.vue'
+import Spinner from '../components/Spinner.vue'
 import Comment from '../components/Comment.vue'
 
 export default {
-  name: 'map-view',
+  name: 'health-view',
   components: { Spinner, Comment },
 
   data: () => ({
     loading: true,
-    windowHeight: '600px',
-    windowWidth: '100%'
+    windowHeight: window.innerHeight - 55,
+    windowWidth: window.innerWidth
   }),
 
   computed: {
@@ -33,7 +33,7 @@ export default {
   },
 
   title () {
-    return 'Map'
+    return 'Health'
   },
 
   // Fetch comments when mounted on the client

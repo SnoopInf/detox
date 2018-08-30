@@ -1,21 +1,20 @@
 <template>
-  <div class="item-view">
-    <iframe src="https://www.google.com/maps/d/embed?mid=1ihIhi0TnUxN4ktx7VC3Pz109nQ5qJt_D" v-bind:width="windowWidth" v-bind:height="windowHeight"></iframe>
+  <div>
+    <EcoMap></EcoMap>
+    <Circles></Circles>
   </div>
 </template>
 
 <script>
-import Map from '../components/EcoMap.vue'
-import Comment from '../components/Comment.vue'
+import EcoMap from '../components/EcoMap.vue'
+import Circles from '../components/Circles.vue'
 
 export default {
-  name: 'map-view',
-  components: { Spinner, Comment },
+  name: 'main-view',
+  components: { EcoMap, Circles },
 
   data: () => ({
-    loading: true,
-    windowHeight: '600px',
-    windowWidth: '100%'
+    loading: true
   }),
 
   computed: {
@@ -39,12 +38,6 @@ export default {
   // Fetch comments when mounted on the client
   beforeMount () {
     this.fetchComments();
-    this.$nextTick(() => {
-      window.addEventListener('resize', () => {
-        this.windowHeight = window.innerHeight - 55;
-        this.windowWidth = window.innerWidth
-      });
-    })
   },
 
   // refetch comments if item changed

@@ -5,7 +5,7 @@
         <router-link to="/" exact>
           <img class="logo" src="~public/logo-48.png" alt="logo">
         </router-link>
-        <router-link to="/map">Detox Ukraine</router-link>
+        <router-link to="/main">Detox Ukraine</router-link>
         <router-link to="/eco">Экология</router-link>
         <router-link to="/health">Здоровье</router-link>
         <router-link to="/ecocase">Экокейсы</router-link>
